@@ -5,7 +5,7 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImFiQ
 {
   "author": "Quincy Larson",
   "url": "https://www.freecodecamp.org/news/podcast-biggest-youtube-programming-channel-beau-carnes/",
-  "title": "Podcast: Running the Biggest Programming Channel on YouTube with freeCodeCamp's Beau Carnes",
+  "title": "react Running the Biggest Programming Channel on YouTube with freeCodeCamp's Beau Carnes",
   "likes" : 101
 }
 
@@ -30,6 +30,9 @@ Content-Type: application/json
 
 ###
 GET http://localhost:3001/api/blogs
+
+###
+GET http://localhost:3001/api/blogs?search=React
 
 ###
 GET http://localhost:3001/api/blogs/100
