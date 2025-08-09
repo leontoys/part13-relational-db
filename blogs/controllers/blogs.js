@@ -1,6 +1,9 @@
 const router = require("express").Router();
 
 const { Blog, User } = require("../models");
+const { SECRET } = require("../util/config");
+const jwt = require("jsonwebtoken");
+
 
 const blogFinder = async (req, res, next) => {
   try {
@@ -16,12 +19,27 @@ router.get("/", async (req, res) => {
   res.json(blogs);
 });
 
+const tokenExtractor = (req, res, next) => {
+  const authorization = req.get("authorization");
+  console.log(authorization)
+  if (authorization && authorization.toLowerCase().startsWith("bearer ")) {
+    try {
+      console.log(SECRET, authorization);
+      req.decodedToken = jwt.verify(authorization.replace("Bearer ", ""),SECRET);
+    } catch {
+      return res.status(401).json({ error: "token invalid" });
+    }
+  } else {
+    return res.status(401).json({ error: "token missing" });
+  }
+  next();
+};
 
-
-router.post("/", async (req, res) => {
+router.post("/", tokenExtractor, async (req, res) => {
   try {
-    const user = await User.findOne()
-    const blog = await Blog.create({ ...req.body, userId : user.id });
+    //const user = await User.findOne()
+    const user = await User.findByPk(req.decodedToken.id)
+    const blog = await Blog.create({ ...req.body, userId : user.id,date: new Date() });
     res.json(blog);
   } catch (error) {
     return res.status(400).json({ error });

@@ -1,11 +1,21 @@
 POST http://localhost:3001/api/blogs
 Content-Type: application/json
+Authorization:  Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImFAYi5jb20iLCJpZCI6MSwiaWF0IjoxNzU0NzczNDk5fQ.SjxjT0TcM6btJSrSlSTKQjtJ97vonTm3cDIrE3TLjtQ
 
 {
   "author": "Quincy Larson",
   "url": "https://www.freecodecamp.org/news/podcast-biggest-youtube-programming-channel-beau-carnes/",
   "title": "Podcast: Running the Biggest Programming Channel on YouTube with freeCodeCamp's Beau Carnes",
   "likes" : 101
+}
+
+###
+POST http://localhost:3001/api/login
+Content-Type: application/json
+
+{
+  "username" : "a@b.com",
+  "password" : "secret"
 }
 
 ###
@@ -41,8 +51,8 @@ POST http://localhost:3001/api/users
 Content-Type: application/json
 
 {
-  "name" : "Liyon SV",
-  "username" : "leon"
+  "name" : "AB",
+  "username" : "a@b.com"
 }
 
 ###
