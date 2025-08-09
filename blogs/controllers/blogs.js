@@ -3,7 +3,7 @@ const router = require("express").Router();
 const { Blog, User } = require("../models");
 const { SECRET } = require("../util/config");
 const jwt = require("jsonwebtoken");
-const { Op } = require("sequelize");
+const { Op , sequelize } = require("sequelize");
 
 
 const blogFinder = async (req, res, next) => {
@@ -29,9 +29,10 @@ router.get("/", async (req, res) => {
   console.log(where)
   const blogs = await Blog.findAll({
     include: {
-      model : User
+      model: User,
     },
-    where
+    where,
+    order: [['likes','DESC']]
   });
   res.json(blogs);
 });
