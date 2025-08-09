@@ -4,6 +4,7 @@ const { Blog } = require("../models");
 
 const blogFinder = async (req, res, next) => {
   req.blog = await Blog.findByPk(req.params.id);
+  throw new Error('Blog not found')
   next();
 };
 
@@ -46,7 +47,7 @@ router.put("/:id", blogFinder, async (req, res) => {
         console.log(req.blog.likes)
     await req.blog.save();
     res.json(req.blog);
-  } else {
+    } else {
     res.status(404).end();
   }
 });
