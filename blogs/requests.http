@@ -41,8 +41,8 @@ POST http://localhost:3001/api/users
 Content-Type: application/json
 
 {
-  "name" : "Shilna SV",
-  "username" : "shil"
+  "name" : "Liyon SV",
+  "username" : "leon"
 }
 
 ###
@@ -53,7 +53,7 @@ PUT http://localhost:3001/api/users/leon
 Content-Type: application/json
 
 {
-  "name" : "Shiyon SV"
+  "username" : "leonsv"
 }
 
 
