@@ -1,6 +1,6 @@
 POST http://localhost:3001/api/blogs
 Content-Type: application/json
-Authorization:  Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImFAYi5jb20iLCJpZCI6MSwiaWF0IjoxNzU0NzczNDk5fQ.SjxjT0TcM6btJSrSlSTKQjtJ97vonTm3cDIrE3TLjtQ
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImFiQGMuY29tIiwiaWQiOjMsImlhdCI6MTc1NDc3MzkyN30.s9UNGo6V217Rk1ftq121Y7pM45JUE2fdJ-Lm5YG4XYY
 
 {
   "author": "Quincy Larson",
@@ -14,7 +14,7 @@ POST http://localhost:3001/api/login
 Content-Type: application/json
 
 {
-  "username" : "a@b.com",
+  "username" : "ab@c.com",
   "password" : "secret"
 }
 
@@ -44,15 +44,17 @@ Content-Type: application/json
 }
 
 ###
-DELETE  http://localhost:3001/api/blogs/4
+DELETE  http://localhost:3001/api/blogs/1
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImFiQGMuY29tIiwiaWQiOjMsImlhdCI6MTc1NDc3MzkyN30.s9UNGo6V217Rk1ftq121Y7pM45JUE2fdJ-Lm5YG4XYY
+
 
 ###
 POST http://localhost:3001/api/users
 Content-Type: application/json
 
 {
-  "name" : "AB",
-  "username" : "a@b.com"
+  "name" : "ABC",
+  "username" : "ab@c.com"
 }
 
 ###
