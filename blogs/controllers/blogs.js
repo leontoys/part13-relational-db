@@ -3,8 +3,11 @@ const router = require("express").Router();
 const { Blog } = require("../models");
 
 const blogFinder = async (req, res, next) => {
-  req.blog = await Blog.findByPk(req.params.id);
-  throw new Error('Blog not found')
+  try {
+     req.blog = await Blog.findByPk(req.params.id); 
+  } catch (error) {
+    return res.status(400).json({ error });    
+  }
   next();
 };
 
