@@ -14,7 +14,7 @@ POST http://localhost:3001/api/login
 Content-Type: application/json
 
 {
-  "username" : "ab@c.com",
+  "username" : "a@b.com",
   "password" : "secret"
 }
 
@@ -45,8 +45,7 @@ Content-Type: application/json
 
 ###
 DELETE  http://localhost:3001/api/blogs/1
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImFiQGMuY29tIiwiaWQiOjMsImlhdCI6MTc1NDc3MzkyN30.s9UNGo6V217Rk1ftq121Y7pM45JUE2fdJ-Lm5YG4XYY
-
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImFAYi5jb20iLCJpZCI6MSwiaWF0IjoxNzU0Nzc0Mzg4fQ.irpPhx3gv-eb2UIH7iMASKGm3TjUrWTXSdYRaea3WmE
 
 ###
 POST http://localhost:3001/api/users
