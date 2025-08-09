@@ -1,0 +1,14 @@
+docker run -e POSTGRES_PASSWORD=mysecretpassword -p 5432:5432 postgres
+
+docker ps
+
+docker exec -it ff3f49eadf27 psql -U postgres postgres
+
+\d notes;
+
+select * from notes;
+
+insert into notes (important) values (true);
+
+postgres=# insert into notes (content, important) values ('only valid data can be saved', 1);
+
