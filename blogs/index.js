@@ -1,4 +1,4 @@
-require("dotenv").config();
+/* require("dotenv").config();
 
 const { Sequelize, Model, DataTypes } = require("sequelize");
 const express = require("express");
@@ -14,7 +14,7 @@ const sequelize = new Sequelize(process.env.DATABASE_URL); //, {
   },
 });*/
 
-class Blog extends Model {}
+/*class Blog extends Model {}
 Blog.init(
   {
     id: {
@@ -98,3 +98,25 @@ const PORT = process.env.PORT || 3001;
 app.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`);
 });
+ */
+
+const express = require("express");
+const app = express();
+
+const { PORT } = require("./util/config");
+const { connectToDatabase } = require("./util/db");
+
+const blogsRouter = require("./controllers/blogs");
+
+app.use(express.json());
+
+app.use("/api/blogs", blogsRouter);
+
+const start = async () => {
+  await connectToDatabase();
+  app.listen(PORT, () => {
+    console.log(`Server running on port ${PORT}`);
+  });
+};
+
+start();
