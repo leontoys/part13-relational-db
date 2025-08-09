@@ -36,4 +36,24 @@ Content-Type: application/json
 ###
 DELETE  http://localhost:3001/api/blogs/4
 
+###
+POST http://localhost:3001/api/users
+Content-Type: application/json
+
+{
+  "name" : "Shilna SV",
+  "username" : "shil"
+}
+
+###
+GET http://localhost:3001/api/users
+
+###
+PUT http://localhost:3001/api/users/leon
+Content-Type: application/json
+
+{
+  "name" : "Shiyon SV"
+}
+
 
