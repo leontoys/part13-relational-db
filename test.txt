@@ -12,3 +12,5 @@ insert into notes (important) values (true);
 
 postgres=# insert into notes (content, important) values ('only valid data can be saved', 1);
 
+Seeders 28//vijaylakshmi P
+

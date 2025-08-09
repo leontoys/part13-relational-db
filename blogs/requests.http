@@ -1,12 +1,12 @@
 POST http://localhost:3001/api/blogs
 Content-Type: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImFiQGMuY29tIiwiaWQiOjMsImlhdCI6MTc1NDc3MzkyN30.s9UNGo6V217Rk1ftq121Y7pM45JUE2fdJ-Lm5YG4XYY
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImFAYi5jb20iLCJpZCI6MiwiaWF0IjoxNzU0NzgxMTkzfQ.Bvfcrs_k_WW16X1y5aHsR8SG11Q115UzbuDjXLKnvaM
 
 {
   "author": "Quincy Larson",
   "url": "https://www.freecodecamp.org/news/podcast-biggest-youtube-programming-channel-beau-carnes/",
-  "title": "react Running the Biggest Programming Channel on YouTube with freeCodeCamp's Beau Carnes",
-  "likes" : 101
+  "title": "react Running jami the Biggest Programming Channel on YouTube with freeCodeCamp's Beau Carnes",
+  "likes" : 20
 }
 
 ###
@@ -21,18 +21,20 @@ Content-Type: application/json
 ###
 POST http://localhost:3001/api/blogs
 Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImFAYi5jb20iLCJpZCI6MiwiaWF0IjoxNzU0NzgxMTkzfQ.Bvfcrs_k_WW16X1y5aHsR8SG11Q115UzbuDjXLKnvaM
 
 {
-  "author": "Beau Carnes",
+  "author": "Beu Jami Carnes",
   "title": "Learn React and Tailwind CSS for Front End Development",
-  "likes" : 51
+  "url" : "wwww.freecodecamp.com",
+  "likes" : 510
 }
 
 ###
 GET http://localhost:3001/api/blogs
 
 ###
-GET http://localhost:3001/api/blogs?search=React
+GET http://localhost:3001/api/blogs?search=jami
 
 ###
 GET http://localhost:3001/api/blogs/100
@@ -55,8 +57,8 @@ POST http://localhost:3001/api/users
 Content-Type: application/json
 
 {
-  "name" : "ABC",
-  "username" : "ab@c.com"
+  "name" : "AB",
+  "username" : "a@b.com"
 }
 
 ###
