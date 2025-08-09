@@ -21,7 +21,7 @@ router.post("/", async (req, res) => {
   }
 });
 
-router.get("/:id", async (req, res) => {
+router.get("/:id", blogFinder, async (req, res) => {
 //  const blog = await Blog.findByPk(req.params.id);
   if (req.blog) {
     res.json(req.blog);
@@ -30,7 +30,7 @@ router.get("/:id", async (req, res) => {
   }
 });
 
-router.delete("/:id", async (req, res) => {
+router.delete("/:id", blogFinder, async (req, res) => {
 //  const blog = await Blog.findByPk(req.params.id);
   if (req.blog) {
     await req.blog.destroy();
@@ -38,10 +38,12 @@ router.delete("/:id", async (req, res) => {
   res.status(204).end();
 });
 
-router.put("/:id", async (req, res) => {
+router.put("/:id", blogFinder, async (req, res) => {
 //  const blog = await Blog.findByPk(req.params.id);
-  if (req.blog) {
-    req.blog.likes = req.blog.likes++;
+    if (req.blog) {
+      console.log(req.blog,req.likes)
+        req.blog.likes = req.body.likes;
+        console.log(req.blog.likes)
     await req.blog.save();
     res.json(req.blog);
   } else {
