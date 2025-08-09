@@ -2,6 +2,11 @@ const router = require("express").Router();
 
 const { Blog } = require("../models");
 
+const blogFinder = async (req, res, next) => {
+  req.blog = await Blog.findByPk(req.params.id);
+  next();
+};
+
 router.get("/", async (req, res) => {
   const blogs = await Blog.findAll();
   res.json(blogs);
@@ -17,28 +22,28 @@ router.post("/", async (req, res) => {
 });
 
 router.get("/:id", async (req, res) => {
-  const blog = await Blog.findByPk(req.params.id);
-  if (blog) {
-    res.json(blog);
+//  const blog = await Blog.findByPk(req.params.id);
+  if (req.blog) {
+    res.json(req.blog);
   } else {
     res.status(404).end();
   }
 });
 
 router.delete("/:id", async (req, res) => {
-  const blog = await Blog.findByPk(req.params.id);
-  if (blog) {
-    await blog.destroy();
+//  const blog = await Blog.findByPk(req.params.id);
+  if (req.blog) {
+    await req.blog.destroy();
   }
   res.status(204).end();
 });
 
 router.put("/:id", async (req, res) => {
-  const blog = await Blog.findByPk(req.params.id);
-  if (blog) {
-    blog.likes = blog.likes++;
-    await blog.save();
-    res.json(blog);
+//  const blog = await Blog.findByPk(req.params.id);
+  if (req.blog) {
+    req.blog.likes = req.blog.likes++;
+    await req.blog.save();
+    res.json(req.blog);
   } else {
     res.status(404).end();
   }
