@@ -47,7 +47,7 @@ Content-Type: application/json
 
 {
   "userId": 1,
-  "blogId": 3
+  "blogId": 2
 }
 
 ###
@@ -57,7 +57,7 @@ GET http://localhost:3001/api/blogs
 GET http://localhost:3001/api/authors
 
 ###
-GET http://localhost:3001/api/users
+GET http://localhost:3001/api/users/1
 
 ###
 GET http://localhost:3001/api/blogs?search=jami
