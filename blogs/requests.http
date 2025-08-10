@@ -1,12 +1,13 @@
 POST http://localhost:3001/api/blogs
 Content-Type: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImFAYi5jb20iLCJpZCI6MSwiaWF0IjoxNzU0Nzg4NTA3fQ.pNcVhMXPxluIJZVJw3JbLsO87pu1HRakfuhpyFT2_Ds
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImFAYi5jb20iLCJpZCI6MSwiaWF0IjoxNzU0NzkwNDYyfQ.O9RiGby5S3SVvBRIvda1KDFbwc1S_STbsPvN9WwXjDc
 
 {
   "author": "Quincy Larson",
   "url": "https://www.freecodecamp.org/news/podcast-biggest-youtube-programming-channel-beau-carnes/",
   "title": "react Running jami the Biggest Programming Channel on YouTube with freeCodeCamp's Beau Carnes",
-  "likes" : 20
+  "likes" : 20,
+  "year" : 2024
 }
 
 ###
