@@ -1,13 +1,10 @@
-POST http://localhost:3001/api/blogs
+###
+POST http://localhost:3001/api/users
 Content-Type: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImFAYi5jb20iLCJpZCI6MSwiaWF0IjoxNzU0NzkwNDYyfQ.O9RiGby5S3SVvBRIvda1KDFbwc1S_STbsPvN9WwXjDc
 
 {
-  "author": "Quincy Larson",
-  "url": "https://www.freecodecamp.org/news/podcast-biggest-youtube-programming-channel-beau-carnes/",
-  "title": "react Running jami the Biggest Programming Channel on YouTube with freeCodeCamp's Beau Carnes",
-  "likes" : 20,
-  "year" : 2024
+  "name" : "AB",
+  "username" : "a@b.com"
 }
 
 ###
@@ -22,7 +19,20 @@ Content-Type: application/json
 ###
 POST http://localhost:3001/api/blogs
 Content-Type: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImFAYi5jb20iLCJpZCI6MiwiaWF0IjoxNzU0NzgxMTkzfQ.Bvfcrs_k_WW16X1y5aHsR8SG11Q115UzbuDjXLKnvaM
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImFAYi5jb20iLCJpZCI6MSwiaWF0IjoxNzU0ODYxOTk3fQ.1wBEy_TYhDZQLeEeahW_12Prwywo-dWBmE64ktnrkT0
+
+{
+  "author": "Quincy Larson",
+  "url": "https://www.freecodecamp.org/news/podcast-biggest-youtube-programming-channel-beau-carnes/",
+  "title": "react Running jami the Biggest Programming Channel on YouTube with freeCodeCamp's Beau Carnes",
+  "likes" : 20,
+  "year" : 2024
+}
+
+###
+POST http://localhost:3001/api/blogs
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImFAYi5jb20iLCJpZCI6MSwiaWF0IjoxNzU0ODYxMjI1fQ.-V8sOlX5uTkNb5MgLhrphpfZDG4rMuoy33L8SuVu9SY
 
 {
   "author": "Beu Jami Carnes",
@@ -32,10 +42,22 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImFAY
 }
 
 ###
+POST http://localhost:3001/api/readinglists
+Content-Type: application/json
+
+{
+  "userId": 1,
+  "blogId": 3
+}
+
+###
 GET http://localhost:3001/api/blogs
 
 ###
 GET http://localhost:3001/api/authors
+
+###
+GET http://localhost:3001/api/users
 
 ###
 GET http://localhost:3001/api/blogs?search=jami
@@ -56,14 +78,7 @@ Content-Type: application/json
 DELETE  http://localhost:3001/api/blogs/1
 Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImFAYi5jb20iLCJpZCI6MSwiaWF0IjoxNzU0Nzc0Mzg4fQ.irpPhx3gv-eb2UIH7iMASKGm3TjUrWTXSdYRaea3WmE
 
-###
-POST http://localhost:3001/api/users
-Content-Type: application/json
 
-{
-  "name" : "AB",
-  "username" : "a@b.com"
-}
 
 ###
 GET http://localhost:3001/api/users
