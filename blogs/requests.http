@@ -1,6 +1,6 @@
 POST http://localhost:3001/api/blogs
 Content-Type: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImFAYi5jb20iLCJpZCI6MiwiaWF0IjoxNzU0NzgxMTkzfQ.Bvfcrs_k_WW16X1y5aHsR8SG11Q115UzbuDjXLKnvaM
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImFAYi5jb20iLCJpZCI6MSwiaWF0IjoxNzU0Nzg4NTA3fQ.pNcVhMXPxluIJZVJw3JbLsO87pu1HRakfuhpyFT2_Ds
 
 {
   "author": "Quincy Larson",
