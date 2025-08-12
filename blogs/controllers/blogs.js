@@ -1,6 +1,6 @@
 const router = require("express").Router();
 
-const { Blog, User } = require("../models");
+const { Blog, User, Session } = require("../models");
 const { SECRET } = require("../util/config");
 const jwt = require("jsonwebtoken");
 const { Op , sequelize } = require("sequelize");
@@ -37,13 +37,28 @@ router.get("/", async (req, res) => {
   res.json(blogs);
 });
 
-const tokenExtractor = (req, res, next) => {
+const tokenExtractor = async (req, res, next) => {
   const authorization = req.get("authorization");
   console.log(authorization)
   if (authorization && authorization.toLowerCase().startsWith("bearer ")) {
     try {
-      console.log(SECRET, authorization);
-      req.decodedToken = jwt.verify(authorization.replace("Bearer ", ""),SECRET);
+      //req.decodedToken = jwt.verify(authorization.replace("Bearer ", ""),SECRET);
+      const token = authorization.replace("Bearer ", "")
+      const decoded = jwt.verify(token, SECRET);
+      
+      //if session expired
+      const session = await Session.findOne({ where: { token } })
+      if (!session) {
+        return res.status(401).json({error:"session expired"})
+      }
+
+      const user = await User.findByPk(decoded.id);
+      if (!user || user.disabled) {
+        return res.status(401).json({ error: "user disabled" });        
+      }
+
+      req.decodedToken = decoded
+
     } catch {
       return res.status(401).json({ error: "token invalid" });
     }
