@@ -16,12 +16,16 @@ User.init(
       unique: true,
       allowNull: false,
       validate: {
-        isEmail : true,
-      }
+        isEmail: true,
+      },
     },
     name: {
       type: DataTypes.STRING,
       allowNull: false,
+    },
+    disabled: {
+      type: DataTypes.BOOLEAN,
+      DefaultValue: false,
     },
   },
   {
